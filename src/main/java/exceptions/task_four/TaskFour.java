@@ -16,13 +16,12 @@ public class TaskFour {
 
     static void main() {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите email: ");
-        String email = scanner.nextLine();
+        try(Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Введите email: ");
+            String email = scanner.nextLine();
 
-        try {
             checkEmailFormat(email);
-        } catch (ChechEmailFormatException e) {
+        } catch (CheckEmailFormatException e) {
             System.out.println("Email введен некорректно!");
         }
 
@@ -30,11 +29,15 @@ public class TaskFour {
 
     public static void checkEmailFormat(String email) {
 
+        if (email == null) {
+            throw new CheckEmailFormatException("Email is null");
+        }
+
         Pattern pattern = Pattern.compile("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$");
         Matcher matcher = pattern.matcher(email);
 
         if (matcher.matches()) {
             System.out.println("Email введен корректно!");
-        } else throw new ChechEmailFormatException("Email введен некорректно!");
+        } else throw new CheckEmailFormatException("Email введен некорректно!");
     }
 }

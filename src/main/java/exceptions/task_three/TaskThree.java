@@ -19,6 +19,8 @@ public class TaskThree {
         } catch (UserValidAgeException e) {
             System.out.println(e.getMessage());
         }
+
+        scanner.close();
     }
 
     public static void checkAge(int age) throws UserValidAgeException {

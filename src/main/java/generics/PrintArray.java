@@ -1,6 +1,7 @@
 package generics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PrintArray {
 
@@ -23,7 +24,7 @@ public class PrintArray {
 
     }
 
-    public static <T> void printArray(ArrayList<T> arrayList) {
+    public static <T> void printArray(List<T> arrayList) {
 
         arrayList.forEach(
                 System.out::println

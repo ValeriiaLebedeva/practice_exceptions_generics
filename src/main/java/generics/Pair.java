@@ -8,8 +8,8 @@ public class Pair <T,U> {
 Класс должен позволять получать и устанавливать каждый из этих объектов.
      */
 
-    T first;
-    T second;
+    private T first;
+    private U second;
 
     public T getFirst() {
         return first;
@@ -19,11 +19,11 @@ public class Pair <T,U> {
         this.first = first;
     }
 
-    public T getSecond() {
+    public U getSecond() {
         return second;
     }
 
-    public void setSecond(T second) {
+    public void setSecond(U second) {
         this.second = second;
     }
 }
